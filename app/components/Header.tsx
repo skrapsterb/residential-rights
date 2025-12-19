@@ -27,6 +27,15 @@ export default function Header() {
           </span>
         </Link>
 
+        {/* Testing banner */}
+        <div className="bg-amber-50 border-b border-amber-200 text-amber-900 text-sm">
+          <div className="max-w-7xl mx-auto px-4 py-2 text-center">
+            <strong>Notice:</strong> This site is currently in testing. 
+            No legal services are being provided and no attorney–client relationship is formed.
+         </div>
+        </div>
+
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (

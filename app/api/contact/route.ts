@@ -1,98 +1,71 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, email, serviceType, message } = body;
+    const apiKey = process.env.RESEND_API_KEY;
+    const to = process.env.CONTACT_TO_EMAIL;
+    const from = process.env.CONTACT_FROM_EMAIL;
 
-    // Basic validation
-    if (!name || !email || !serviceType || !message) {
+    if (!apiKey || !to || !from) {
       return NextResponse.json(
-        { error: 'All fields are required.' },
-        { status: 400 }
-      );
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Please enter a valid email address.' },
-        { status: 400 }
-      );
-    }
-
-    const toEmail = process.env.CONTACT_TO_EMAIL;
-    if (!toEmail || !process.env.RESEND_API_KEY) {
-      console.error('Missing CONTACT_TO_EMAIL or RESEND_API_KEY environment variables.');
-      return NextResponse.json(
-        { error: 'Email configuration error. Please try again later.' },
+        { error: "Email service is not configured." },
         { status: 500 }
       );
+    }
+
+    const resend = new Resend(apiKey);
+
+    const body = await req.json();
+    const { name, email, serviceType, message } = body;
+
+    if (!name || !email || !serviceType || !message) {
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
     const subject = `New website inquiry – ${serviceType}`;
-    const textBody = [
-      '=====================================',
-      'New Website Inquiry – Residential Rights Legal Counsel',
-      '=====================================',
-      '',
-      `Submitted at: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })}`,
-      '',
-      'Client Information',
-      '------------------',
-      `Name:        ${name}`,
-      `Email:       ${email}`,
-      `Service Type: ${serviceType}`,
-      '',
-      'Message',
-      '-------',
-      message,
-      '',
-      'End of message.',
-    ].join('\n');
 
+    const html = `
+      <h2>New Inquiry</h2>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Service:</strong> ${escapeHtml(serviceType)}</p>
+      <p><strong>Message:</strong></p>
+      <pre style="white-space:pre-wrap;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+${escapeHtml(message)}
+      </pre>
+    `;
 
-    const { data, error } = await resend.emails.send({
-      from: 'Residential Rights Legal Counsel <no-reply@residentialrights.com>',
-      to: [toEmail],
+    const { error } = await resend.emails.send({
+      from,
+      to,
       replyTo: email,
       subject,
-      text: textBody,
+      html,
     });
 
     if (error) {
-      console.error('Resend API error:', error);
-      return NextResponse.json(
-        { error: 'Email service error. Please try again later.' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    console.log('Contact form email sent via Resend:', {
-      data,
-      name,
-      email,
-      serviceType,
-      to: toEmail,
-      timestamp: new Date().toISOString(),
-    });
-
     return NextResponse.json(
-      {
-        success: true,
-        message:
-          'Your message has been sent. You should receive a reply within one business day.',
-      },
+      { success: true, message: "Thanks — we received your message." },
       { status: 200 }
     );
-  } catch (error) {
-    console.error('Contact form error:', error);
+  } catch (err: any) {
     return NextResponse.json(
-      { error: 'An unexpected error occurred. Please try again later.' },
+      { error: "An error occurred processing your request." },
       { status: 500 }
     );
   }
+}
+
+// tiny helper to avoid HTML injection in emails
+function escapeHtml(input: string) {
+  return input
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }

@@ -47,6 +47,37 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
         <Header />
         <main className="min-h-screen">{children}</main>
+        {/* Legal disclaimer */}
+        <section className="bg-neutral-100 border-t border-neutral-300 text-xs text-neutral-700">
+          <div className="max-w-5xl mx-auto px-4 py-6 space-y-3 leading-relaxed">
+            <p>
+              <strong>No Attorney–Client Relationship.</strong> 
+              Visiting this website, submitting information, or purchasing a fixed-fee service 
+              does not create an attorney–client relationship. An attorney–client relationship 
+              is formed only upon written confirmation following a conflict check.
+            </p>
+
+            <p>
+              <strong>Limited-Scope Services.</strong> 
+              Services offered through this website are limited-scope, fixed-fee legal services 
+              focused on document review, strategy, and written guidance. 
+              No court appearances, negotiations, or ongoing representation are provided.
+            </p>
+
+            <p>
+              <strong>Use of Technology & AI.</strong> 
+              Certain services may incorporate technology-assisted review tools, including AI-assisted 
+              research and drafting, under attorney supervision. All final work product is reviewed 
+              by a licensed attorney.
+            </p>
+
+            <p>
+              <strong>Jurisdiction.</strong> 
+              Services are provided by a Texas-licensed attorney and are limited to matters governed 
+              by Texas law unless otherwise stated.
+            </p>
+          </div>
+        </section>
         <Footer />
       </body>
     </html>
