@@ -4,42 +4,57 @@ import Container from './components/Container';
 export const metadata = {
   title: 'Home',
   description:
-    'Residential Rights Legal Counsel provides modern, fixed-fee legal services for Texas tenants and homeowners facing lease, security deposit, and HOA issues.',
+    'Residential Rights Legal Counsel provides fixed-fee legal services for Texas tenants and homeowners — lease reviews, security deposit recovery, repair demands, HOA disputes, and emergency lockout protection.',
 };
 
 export default function Home() {
-  const services = [
+  const featuredServices = [
     {
-      title: 'Residential Lease Review',
+      title: 'Lease Review',
+      price: '$299',
       description:
-        'Get a clear, plain-English breakdown of your lease before you sign – with specific risks and negotiation points flagged.',
+        'A clear, plain-English review of your residential lease before you sign or renew — with specific risks, unfair terms, and negotiation points flagged.',
       bullets: [
-        'Line-by-line review of your lease',
-        'Identification of one-sided or risky clauses',
-        'Plain-language summary of your obligations',
-        'Practical suggestions for pushback and edits',
+        'Line-by-line review with risk flags',
+        'Plain-English summary of key obligations',
+        'Identification of one-sided clauses',
+        'Actionable negotiation points',
       ],
     },
     {
       title: 'Security Deposit Recovery',
+      price: '$249',
       description:
-        'Professional demand letter and strategy when your landlord withholds or chips away at your deposit without justification.',
+        'A professional demand letter when your landlord withholds or improperly deducts from your security deposit, grounded in Texas statutory deadlines.',
       bullets: [
-        'Review of your lease and move-out documents',
-        'Custom demand letter tailored to Texas law',
-        'Clear explanation of timing and next steps',
-        'Optional follow-up language you can send',
+        'Review of lease and deduction statement',
+        'Custom demand letter citing Texas law',
+        'Statutory penalty calculations',
+        'Clear next steps if landlord doesn\'t respond',
       ],
     },
     {
-      title: 'HOA Dispute Strategy',
+      title: 'Lease Exit Strategy',
+      price: '$349',
       description:
-        'Calm, structured legal strategy for covenant disputes, fines, and board communications – without escalating unnecessarily.',
+        'A strategic analysis of your options when you need to leave your lease early — covering penalties, protections, and the most cost-effective path out.',
       bullets: [
-        'Review of HOA documents and correspondence',
-        'Assessment of leverage, risk, and options',
-        'Draft or revise your written response to the HOA',
-        'Guidance on when to push and when to de-escalate',
+        'Full review of termination provisions',
+        'Early termination penalty analysis',
+        'Applicable statutory protections',
+        'Cost-benefit comparison of exit paths',
+      ],
+    },
+    {
+      title: 'Emergency Lockout / Utility Shutoff',
+      price: '$349',
+      description:
+        'Urgent demand letter when your landlord has locked you out or shut off utilities — citing Texas statutory penalties and demanding immediate restoration.',
+      bullets: [
+        'Rapid review of facts and documentation',
+        'Emergency demand citing Prop. Code penalties',
+        'Demand for immediate restoration',
+        '24-hour turnaround — always expedited',
       ],
     },
   ];
@@ -49,13 +64,13 @@ export default function Home() {
       step: '01',
       title: 'Choose Your Service',
       description:
-        'Start with the issue in front of you: a new lease, a deposit problem, or an HOA notice. Each service is fixed-fee and clearly defined.',
+        'Browse 8 fixed-fee services for lease issues, deposit disputes, HOA conflicts, and emergency situations. Each one is clearly scoped with transparent pricing.',
     },
     {
       step: '02',
       title: 'Share Your Documents',
       description:
-        'Securely upload your lease, letters, emails, notices, or photos. You’ll answer a focused intake questionnaire – no endless forms.',
+        'Securely upload your lease, letters, emails, notices, or photos. You\'ll answer a focused intake questionnaire — no endless forms.',
     },
     {
       step: '03',
@@ -80,7 +95,7 @@ export default function Home() {
             {/* Left: message */}
             <div>
               <p className="text-xs font-semibold tracking-[0.22em] uppercase text-primary-300 mb-4">
-                Texas • Residential • Focused
+                Texas · Residential · Focused
               </p>
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
                 Clear, fixed-fee legal counsel for
@@ -89,10 +104,9 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-base md:text-lg text-neutral-200 mb-8 max-w-xl">
-                Residential Rights Legal Counsel helps Texas tenants and
-                homeowners navigate lease terms, security deposits, and HOA
-                disputes with calm, structured legal analysis – not guesswork or
-                panic.
+                From lease reviews to emergency lockout demands — structured legal
+                work with clear pricing. 8 fixed-fee services for Texas tenants and
+                homeowners, each with a defined scope and written deliverable.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -123,9 +137,9 @@ export default function Home() {
                 Bret Sparks, Attorney at Law
               </p>
               <p className="text-sm text-neutral-200 mb-4">
-                Texas attorney focused on residential issues – leases, deposits,
-                and HOA disputes. The goal: practical, grounded legal work you
-                can actually use.
+                Texas attorney focused on residential issues — leases, deposits,
+                repairs, HOA disputes, and emergency situations. The goal:
+                practical, grounded legal work you can actually use.
               </p>
               <div className="grid grid-cols-2 gap-3 text-xs text-neutral-200 mb-5">
                 <div className="rounded-xl border border-neutral-700/80 px-3 py-2">
@@ -146,7 +160,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-xs text-neutral-400">
-                No surprise hourly bills. No pressure to “escalate” if you don’t
+                No surprise hourly bills. No pressure to &quot;escalate&quot; if you don&apos;t
                 want to. Just clear options, risks, and next steps.
               </p>
             </div>
@@ -160,29 +174,35 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
             <div>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 mb-3">
-                What Residential Rights Legal Counsel does.
+                Fixed-fee legal services for Texas tenants and homeowners.
               </h2>
               <p className="text-sm md:text-base text-neutral-600 max-w-xl">
-                A focused set of fixed-fee services for the situations that most
-                often derail people’s housing stability and peace of mind.
+                8 services covering the situations that most often derail
+                people&apos;s housing stability and peace of mind — from lease
+                reviews to emergency lockout demands.
               </p>
             </div>
             <p className="text-xs text-neutral-500 max-w-xs">
               All services are scoped in writing before payment. If what you
-              need is outside the packaged services, you’ll know that before you
+              need is outside the packaged services, you&apos;ll know that before you
               commit.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {services.map((service) => (
+          <div className="grid gap-8 md:grid-cols-2">
+            {featuredServices.map((service) => (
               <div
                 key={service.title}
                 className="bg-white rounded-2xl border border-neutral-200/80 shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col"
               >
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                  {service.title}
-                </h3>
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-lg font-semibold text-neutral-900">
+                    {service.title}
+                  </h3>
+                  <span className="text-lg font-bold text-primary-600 flex-shrink-0 ml-4">
+                    {service.price}
+                  </span>
+                </div>
                 <p className="text-sm text-neutral-600 mb-4">
                   {service.description}
                 </p>
@@ -204,6 +224,15 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-primary-600 text-white hover:bg-primary-700 shadow-sm transition-colors"
+            >
+              View all 8 services →
+            </Link>
           </div>
         </Container>
       </section>
@@ -258,9 +287,9 @@ export default function Home() {
                 day-to-day.
               </p>
               <p className="text-sm md:text-base text-neutral-300 max-w-xl">
-                You’re not a case file on a stack. You’re someone whose home,
+                You&apos;re not a case file on a stack. You&apos;re someone whose home,
                 credit, and mental bandwidth are impacted by a single document
-                or email you aren’t sure how to handle. The work is built around
+                or email you aren&apos;t sure how to handle. The work is built around
                 that reality.
               </p>
             </div>
@@ -272,7 +301,7 @@ export default function Home() {
                 </h3>
                 <p className="text-xs text-neutral-300">
                   You know the fee and the deliverables before you pay. No
-                  “meter is running” anxiety, no surprise invoices.
+                  &quot;meter is running&quot; anxiety, no surprise invoices.
                 </p>
               </div>
               <div className="rounded-2xl border border-neutral-700/70 bg-neutral-900/60 px-4 py-4">

@@ -115,12 +115,14 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="">Select a service...</option>
-                    <option value="lease-review">Residential Lease Review</option>
-                    <option value="deposit-letter">Residential Response/Demand Letter</option>
-                    <option value="exit-consult">Lease Exit/Move-Out Strategy Consult</option>
-                    <option value="hoa-review">HOA Violation Letter Review</option>
-                    <option value="hoa-letter">HOA Response/Demand Letter</option>
-                    <option value="hoa-consult">HOA Dispute Consult</option>
+                    <option value="lease-review">Lease Review</option>
+                    <option value="security-deposit">Security Deposit Recovery</option>
+                    <option value="repair-demand">Repair & Habitability Demand</option>
+                    <option value="lease-exit">Lease Exit Strategy</option>
+                    <option value="move-out-rights">Move-Out Rights Review</option>
+                    <option value="hoa-fine-dispute">HOA Fine Dispute</option>
+                    <option value="ccr-review">CC&R Review</option>
+                    <option value="emergency-lockout">Emergency Lockout / Utility Shutoff</option>
                     <option value="other">Other / Not Sure</option>
                   </select>
                 </div>

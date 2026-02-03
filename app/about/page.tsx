@@ -3,7 +3,7 @@ import Container from '../components/Container';
 export const metadata = {
   title: 'About',
   description:
-    'Learn about Residential Rights Legal Counsel and Bret Sparks, Attorney at Law – a Texas practice focused on leases, security deposits, and HOA disputes.',
+    'Learn about Residential Rights Legal Counsel and Bret Sparks, Attorney at Law – a Texas practice offering 8 fixed-fee services for tenants and homeowners.',
 };
 
 export default function AboutPage() {
@@ -22,9 +22,9 @@ export default function AboutPage() {
             </h1>
             <p className="text-sm md:text-base text-neutral-300">
               Residential Rights Legal Counsel exists for everyday housing
-              issues that have a very real impact: leases, deposits, and HOA
-              disputes. The work is intentionally narrow so it can be genuinely
-              useful.
+              issues that have a very real impact: leases, deposits, repairs,
+              HOA disputes, and emergencies. The work is intentionally narrow
+              so it can be genuinely useful.
             </p>
           </div>
         </Container>
@@ -79,8 +79,9 @@ export default function AboutPage() {
                     Narrow, on purpose.
                   </h3>
                   <p className="text-xs text-neutral-600">
-                    This practice focuses on leases, security deposits, and HOA
-                    disputes. That focus keeps the work practical and fast,
+                    8 fixed-fee services covering leases, security deposits,
+                    repairs, move-out rights, HOA disputes, and emergency
+                    situations. That focus keeps the work practical and fast,
                     instead of scattered across dozens of areas.
                   </p>
                 </div>

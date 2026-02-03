@@ -14,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/legal/terms",
     "/legal/privacy",
-    "/checkout/success",
-    "/checkout/cancelled",
   ];
 
   return routes.map((route) => ({

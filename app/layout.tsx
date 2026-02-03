@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Residential Rights Legal Counsel',
   },
   description:
-    'Residential Rights Legal Counsel provides modern, fixed-fee legal services for Texas tenants and homeowners, including lease reviews, security deposit disputes, and HOA issues.',
+    'Residential Rights Legal Counsel provides fixed-fee legal services for Texas tenants and homeowners — lease reviews, security deposit recovery, repair demands, HOA disputes, and emergency lockout protection.',
   keywords: [
     'Texas attorney',
     'residential rights',
@@ -25,7 +25,14 @@ export const metadata: Metadata = {
     'HOA disputes',
     'lease review',
     'security deposit',
+    'repair demand',
+    'lease exit',
+    'move out rights',
+    'emergency lockout',
+    'utility shutoff',
+    'CC&R review',
     'Bret Sparks',
+    'fixed fee attorney',
   ],
   openGraph: {
     type: 'website',
@@ -33,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Residential Rights Legal Counsel',
     title: 'Residential Rights Legal Counsel',
     description:
-      'Modern, fixed-fee legal services for Texas tenants and homeowners.',
+      'Fixed-fee legal services for Texas tenants and homeowners — lease reviews, deposit recovery, repair demands, HOA disputes, and more.',
   },
 };
 
