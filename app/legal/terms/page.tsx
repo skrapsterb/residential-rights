@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import Container from '../../components/Container';
 
-export const metadata = {
-  title: 'Terms of Service',
-  description:
-    'Terms of Service for Residential Rights Legal Counsel, a Texas law practice focused on residential and HOA matters.',
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of service for Residential Rights Legal Counsel fixed-fee legal services.",
 };
 
 export default function TermsPage() {

@@ -1,10 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '../components/Container';
 
-export const metadata = {
-  title: 'Services & Pricing | Residential Rights Legal Counsel',
-  description:
-    '8 fixed-fee legal services for Texas tenants and homeowners. Lease reviews from $299, security deposit recovery from $249, emergency lockout demands, HOA dispute responses, and more.',
+export const metadata: Metadata = {
+  title: "Services & Pricing",
+  description: "8 fixed-fee legal services for Texas tenants and homeowners. Lease review $299, security deposit recovery $249, repair demands $249, HOA disputes $299, emergency lockout $349. No hourly billing.",
 };
 
 type Service = {

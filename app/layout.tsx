@@ -52,6 +52,36 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LegalService",
+              "name": "Residential Rights Legal Counsel",
+              "description": "Fixed-fee legal services for Texas tenants and homeowners — lease reviews, security deposit recovery, repair demands, HOA disputes, and emergency lockout protection.",
+              "url": "https://www.residentialrights.com",
+              "telephone": "+1-646-951-0711",
+              "email": "contact@residentialrights.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+              },
+              "areaServed": {
+                "@type": "State",
+                "name": "Texas"
+              },
+              "priceRange": "$199 - $449",
+              "founder": {
+                "@type": "Person",
+                "name": "Bret Sparks",
+                "jobTitle": "Attorney at Law"
+              },
+              "sameAs": []
+            })
+          }}
+        />
         <Header />
         <main className="min-h-screen">{children}</main>
         {/* Legal disclaimer */}

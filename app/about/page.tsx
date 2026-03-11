@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import Container from '../components/Container';
 
-export const metadata = {
-  title: 'About',
-  description:
-    'Learn about Residential Rights Legal Counsel and Bret Sparks, Attorney at Law – a Texas practice offering 8 fixed-fee services for tenants and homeowners.',
+export const metadata: Metadata = {
+  title: "About",
+  description: "Bret Sparks is a Texas attorney focused on residential legal issues — leases, deposits, repairs, and HOA disputes. Practical, fixed-fee legal help for tenants and homeowners.",
 };
 
 export default function AboutPage() {

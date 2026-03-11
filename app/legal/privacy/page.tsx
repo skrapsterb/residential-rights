@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import Container from '../../components/Container';
 
-export const metadata = {
-  title: 'Privacy Policy',
-  description:
-    'Privacy Policy for Residential Rights Legal Counsel describing how inquiry and client information may be collected and used.',
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy policy for Residential Rights Legal Counsel. How we handle your information when you use our fixed-fee legal services.",
 };
 
 export default function PrivacyPage() {

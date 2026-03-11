@@ -1,10 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from './components/Container';
 
-export const metadata = {
-  title: 'Home',
-  description:
-    'Residential Rights Legal Counsel provides fixed-fee legal services for Texas tenants and homeowners — lease reviews, security deposit recovery, repair demands, HOA disputes, and emergency lockout protection.',
+export const metadata: Metadata = {
+  title: "Texas Tenant & HOA Lawyer | Fixed-Fee Legal Services | Residential Rights",
+  description: "Fixed-fee legal services for Texas tenants and homeowners. Lease reviews, security deposit recovery, repair demands, HOA disputes, and emergency lockout help. Clear pricing, fast turnaround.",
 };
 
 export default function Home() {

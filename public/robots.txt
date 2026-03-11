@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://residentialrights.com/sitemap.xml
+Sitemap: https://www.residentialrights.com/sitemap.xml

@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact | Residential Rights Legal Counsel',
-  description:
-    'Contact Bret Sparks, Attorney at Law (Texas), to ask a question or inquire about fixed-fee services for residential and HOA matters.',
+  title: "Contact",
+  description: "Contact Residential Rights Legal Counsel for fixed-fee legal help with leases, security deposits, repairs, or HOA disputes in Texas. Email contact@residentialrights.com or call 646-951-0711.",
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
