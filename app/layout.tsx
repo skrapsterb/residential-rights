@@ -42,6 +42,10 @@ export const metadata: Metadata = {
     description:
       'Fixed-fee legal services for Texas tenants and homeowners — lease reviews, deposit recovery, repair demands, HOA disputes, and more.',
   },
+  metadataBase: new URL('https://www.residentialrights.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({
