@@ -1,20 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import * as postmark from "postmark";
 
 export async function POST(req: NextRequest) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiToken = process.env.POSTMARK_API_TOKEN;
     const to = process.env.CONTACT_TO_EMAIL;
-    const from = process.env.CONTACT_FROM_EMAIL;
 
-    if (!apiKey || !to || !from) {
+    if (!apiToken || !to) {
       return NextResponse.json(
         { error: "Email service is not configured." },
         { status: 500 }
       );
     }
 
-    const resend = new Resend(apiKey);
+    const client = new postmark.ServerClient(apiToken);
 
     const body = await req.json();
     const { name, email, serviceType, message } = body;
@@ -36,17 +35,13 @@ ${escapeHtml(message)}
       </pre>
     `;
 
-    const { error } = await resend.emails.send({
-      from,
-      to,
-      replyTo: email,
-      subject,
-      html,
+    await client.sendEmail({
+      From: "contact@residentialrights.com",
+      To: to,
+      ReplyTo: email,
+      Subject: subject,
+      HtmlBody: html,
     });
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
 
     return NextResponse.json(
       { success: true, message: "Thanks — we received your message." },
