@@ -54,7 +54,7 @@ export default function Home() {
         'Rapid review of facts and documentation',
         'Emergency demand citing Prop. Code penalties',
         'Demand for immediate restoration',
-        '24-hour turnaround — always expedited',
+        '1 business day turnaround — always expedited',
       ],
     },
   ];

@@ -26,7 +26,7 @@ const tenantServices: Service[] = [
     serviceType: 'LEASE_REVIEW',
     price: '$299',
     expeditedPrice: '$399',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Analysis Memo',
     description:
       'A clear, plain-English review of your residential lease before you sign or renew — with specific risks, unfair terms, and negotiation points flagged.',
@@ -44,7 +44,7 @@ const tenantServices: Service[] = [
     serviceType: 'SECURITY_DEPOSIT',
     price: '$249',
     expeditedPrice: '$349',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Demand Letter',
     description:
       'A professional demand letter when your landlord withholds or improperly deducts from your security deposit, grounded in Texas statutory deadlines and penalties.',
@@ -62,7 +62,7 @@ const tenantServices: Service[] = [
     serviceType: 'REPAIR_DEMAND',
     price: '$249',
     expeditedPrice: '$349',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Statutory Demand Letter',
     description:
       'A statutory demand letter when your landlord fails to make repairs affecting your health, safety, or habitability — with clear legal deadlines and consequences.',
@@ -80,7 +80,7 @@ const tenantServices: Service[] = [
     serviceType: 'LEASE_EXIT',
     price: '$349',
     expeditedPrice: '$449',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Options Memo',
     description:
       'A strategic analysis of your options when you need to leave your lease early — covering penalties, mitigation, military/DV protections, and the most cost-effective path out.',
@@ -98,7 +98,7 @@ const tenantServices: Service[] = [
     serviceType: 'MOVE_OUT_RIGHTS',
     price: '$199',
     expeditedPrice: '$299',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Checklist Memo',
     description:
       'A concise guide to your rights and obligations during the move-out process — notice requirements, deposit protections, inspection procedures, and documentation checklists.',
@@ -119,7 +119,7 @@ const hoaServices: Service[] = [
     serviceType: 'HOA_FINE_DISPUTE',
     price: '$299',
     expeditedPrice: '$399',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Dispute Response Letter',
     description:
       'A structured dispute response when your HOA issues a fine or violation notice that seems wrong, inconsistent, or procedurally flawed.',
@@ -137,7 +137,7 @@ const hoaServices: Service[] = [
     serviceType: 'CCR_REVIEW',
     price: '$299',
     expeditedPrice: '$399',
-    turnaround: '72 hours standard · 24 hours expedited',
+    turnaround: '3 business days standard · 1 business day expedited',
     deliverable: 'Analysis Memo',
     description:
       'An analysis of your HOA\'s governing documents focused on the restrictions, assessment authority, and enforcement provisions that affect your specific situation.',
@@ -157,7 +157,7 @@ const emergencyService: Service = {
   serviceType: 'EMERGENCY_LOCKOUT',
   price: '$349',
   expeditedPrice: null,
-  turnaround: '24 hours — always expedited',
+  turnaround: '1 business day — always expedited',
   deliverable: 'Emergency Demand Letter',
   description:
     'Urgent demand letter when your landlord has locked you out or shut off utilities — citing Texas statutory penalties and demanding immediate restoration of access.',
@@ -315,7 +315,7 @@ export default function ServicesPage() {
         <Container>
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-900 mb-2">Emergency Service</h2>
-            <p className="text-neutral-600">Urgent legal action when you need it most — always expedited, 24-hour turnaround.</p>
+            <p className="text-neutral-600">Urgent legal action when you need it most — always expedited, 1 business day turnaround.</p>
           </div>
           <ServiceCard service={emergencyService} />
         </Container>
