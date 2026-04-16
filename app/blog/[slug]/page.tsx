@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Container from '../../components/Container';
+import { BlogServicesLink } from '../../components/PlausibleEvents';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/blog';
 
 type Props = { params: { slug: string } };
@@ -84,12 +85,12 @@ export default async function BlogPostPage({ params }: Props) {
             Our fixed-fee legal services give Texas tenants and homeowners clear
             answers — no hourly billing, no surprises.
           </p>
-          <Link
+          <BlogServicesLink
             href="/services"
             className="mt-6 inline-block rounded-full px-6 py-3 text-sm font-semibold bg-primary-600 text-white hover:bg-primary-700 shadow-sm transition-colors"
           >
             View Services &amp; Pricing
-          </Link>
+          </BlogServicesLink>
         </Container>
       </section>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import type { ReactNode } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -56,6 +57,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
+        <Script
+          src="https://plausible.io/js/pa-5eKTEmpaFjmIAdHR7cvJa.js"
+          strategy="afterInteractive"
+          async
+        />
+        <Script
+          id="plausible-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

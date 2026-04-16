@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '../components/Container';
+import { ServicePageViewTracker, StripeCheckoutLink } from '../components/PlausibleEvents';
 
 export const metadata: Metadata = {
   title: "Services & Pricing",
@@ -241,8 +242,9 @@ function ServiceCard({ service }: { service: Service }) {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <a
+          <StripeCheckoutLink
             href={`${platformUrl}/public/intake?service=${service.serviceType}`}
+            serviceType={service.serviceType}
             className={`sm:flex-1 inline-flex items-center justify-center px-8 py-3 rounded-xl font-semibold text-sm md:text-base transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               isEmergency
                 ? 'bg-amber-600 text-white hover:bg-amber-700 focus:ring-amber-500'
@@ -250,7 +252,7 @@ function ServiceCard({ service }: { service: Service }) {
             }`}
           >
             Get Started →
-          </a>
+          </StripeCheckoutLink>
           <Link
             href="/contact"
             className="sm:flex-1 inline-flex items-center justify-center px-8 py-3 rounded-xl bg-neutral-100 text-neutral-900 font-semibold text-sm md:text-base hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 transition-colors"
@@ -266,6 +268,7 @@ function ServiceCard({ service }: { service: Service }) {
 export default function ServicesPage() {
   return (
     <>
+      <ServicePageViewTracker />
       <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-16">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
