@@ -169,13 +169,6 @@ export default function PrivacyPage() {
               information may be handled, you may reach out through the Contact
               page on this website.
             </p>
-
-            <p className="text-[0.7rem] text-neutral-500 mt-6">
-              <strong>Note:</strong> This Privacy Policy is a general template
-              and may not address every regulatory requirement applicable to
-              your practice. You should review and adapt it as needed and seek
-              guidance where specific privacy or data protection laws may apply.
-            </p>
           </div>
         </Container>
       </section>

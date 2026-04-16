@@ -147,14 +147,6 @@ export default function TermsPage() {
               If you have questions about these Terms, you may reach out through
               the Contact page on this website.
             </p>
-
-            <p className="text-[0.7rem] text-neutral-500 mt-6">
-              <strong>Note:</strong> This Terms of Service page is a general
-              template and may not address every issue relevant to your
-              practice. You should review and customize it as needed and ensure
-              it complies with applicable law and professional responsibility
-              requirements.
-            </p>
           </div>
         </Container>
       </section>
